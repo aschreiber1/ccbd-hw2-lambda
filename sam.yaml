@@ -28,3 +28,14 @@ Resources:
       Policies:
         - AmazonLexFullAccess
         - AmazonOpenSearchServiceFullAccess
+      Events:
+        PhotoUploadedEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref PhotoSrcBucket
+            Events: s3:ObjectCreated:Put
+  PhotoSrcBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      BucketName: "ccbd-hw2-photos-cf"

@@ -59,7 +59,7 @@ def query(parsed_query):
     )
     print(response)
     
-    base_url = 'https://ccbd-hw2-photos.s3.amazonaws.com/{}'
+    base_url = 'https://ccbd-hw2-photos-cf.s3.amazonaws.com/{}'
     
     out = map(lambda x: {'url': base_url.format(x['_source']['objectKey']), 'labels' : x['_source']['labels']}, response['hits']['hits'])
     
