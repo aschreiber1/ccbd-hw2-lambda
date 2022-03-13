@@ -16,6 +16,12 @@ Resources:
         - AmazonS3FullAccess
         - AmazonRekognitionFullAccess
         - AmazonOpenSearchServiceFullAccess
+      Events:
+        PhotoUploadedEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref PhotoSrcBucket
+            Events: s3:ObjectCreated:Put
   LambdaFunction2:
     Type: AWS::Serverless::Function
     Properties:
@@ -28,12 +34,6 @@ Resources:
       Policies:
         - AmazonLexFullAccess
         - AmazonOpenSearchServiceFullAccess
-      Events:
-        PhotoUploadedEvent:
-          Type: S3
-          Properties:
-            Bucket: !Ref PhotoSrcBucket
-            Events: s3:ObjectCreated:Put
   PhotoSrcBucket:
     Type: AWS::S3::Bucket
     Properties:
