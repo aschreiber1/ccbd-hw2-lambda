@@ -7,7 +7,7 @@ Resources:
     Properties:
       FunctionName: ccbd-hw2-lambda1-cf
       CodeUri: /tmp/output.zip
-      Handler: /functions/lambda1.lambda_handler
+      Handler: lambda1.lambda_handler
       Runtime: python3.9
       MemorySize: 128
       Timeout: 10 # seconds, 900 max
@@ -21,7 +21,7 @@ Resources:
     Properties:
       FunctionName: ccbd-hw2-lambda2-cf
       CodeUri: /tmp/output.zip
-      Handler: /functions/lambda2.lambda_handler
+      Handler: lambda2.lambda_handler
       Runtime: python3.9
       MemorySize: 128
       Timeout: 10 # seconds, 900 max
