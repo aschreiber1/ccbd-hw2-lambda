@@ -184,7 +184,6 @@ Resources:
                   "default": {
                     "statusCode": "200",
                     "responseParameters": {
-                      "method.response.header.content-type": "integration.response.header.content-type",
                       "method.response.header.Content-Type": "integration.response.header.Content-Type"
                     }
                   },
