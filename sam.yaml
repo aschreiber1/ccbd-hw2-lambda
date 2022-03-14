@@ -135,7 +135,7 @@ Resources:
                   "httpMethod": "GET",
                   "type": "aws_proxy"
                 }
-              }
+              },
               "responses" : {
                 "200" : {
                   "description" : "200 response",
