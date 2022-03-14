@@ -61,6 +61,7 @@ Resources:
   apiGatewayExecutionPolicy:
     Type: AWS::IAM::Policy
     Properties:
+      PolicyName: !Sub ${AWS::StackName}-apiGatewayExecutionPolicy
       Roles:
         - !Ref s3AWSIntegrationExecutionRole
       PolicyDocument:
