@@ -117,7 +117,7 @@ Resources:
                     "statusCode": "200"
                   }
                 },
-                "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/${LambdaFunction2.Arn}/invocations",
+                "uri": "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaFunction2.Arn}/invocations",
                 "passthroughBehavior": "when_no_match",
                 "httpMethod": "GET",
                 "type": "aws_proxy"
