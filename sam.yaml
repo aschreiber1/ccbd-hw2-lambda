@@ -57,14 +57,12 @@ Resources:
             Principal:
               Service:
                 - apigateway.amazonaws.com
-      RoleName: s3AWSIntegrationExecutionRole
   # policies
   apiGatewayExecutionPolicy:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: !Sub ${AWS::StackName}-apiGatewayExecutionPolicy
       Roles:
-        - Ref: s3AWSIntegrationExecutionRole
+        - !Ref s3AWSIntegrationExecutionRole
       PolicyDocument:
         Version: "2012-10-17"
         Statement:
