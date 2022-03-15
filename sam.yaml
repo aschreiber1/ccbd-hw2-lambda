@@ -95,4 +95,4 @@ Resources:
         Fn::Transform:
           Name: AWS::Include
           Parameters:
-            Location: tmp/swagger.yaml
+            Location: swagger.yaml
