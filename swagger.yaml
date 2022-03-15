@@ -71,7 +71,8 @@ paths:
       security:
       - api_key: []
       x-amazon-apigateway-integration:
-        #credentials: !GetAtt s3AWSIntegrationExecutionRole.Arn
+        credentials:
+          Fn::Sub: ${s3AWSIntegrationExecutionRole.Arn}
         httpMethod: "PUT"
         uri: "arn:aws:apigateway:us-east-1:s3:path/{bucket}/{key}"
         responses:
