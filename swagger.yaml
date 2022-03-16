@@ -35,6 +35,8 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-amazon-apigateway-integration:
+        credentials:
+          Fn::Sub: ${s3AWSIntegrationExecutionRole.Arn}
         httpMethod: "POST"
         uri: 
           Fn::Sub: "arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaFunction2.Arn}/invocations"
