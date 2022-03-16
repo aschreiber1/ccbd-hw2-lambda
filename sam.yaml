@@ -97,7 +97,6 @@ Resources:
         AllowMethods: "'*'"
         AllowHeaders: "'*'"
         AllowOrigin: "'*'"
-        AllowCredentials: true
       Auth:
         DefaultAuthorizer:
           NONE
