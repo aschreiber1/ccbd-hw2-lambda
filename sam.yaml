@@ -101,3 +101,39 @@ Resources:
           Name: AWS::Include
           Parameters:
             Location: swagger.yaml
+ 
+  ApiKey: 
+    Type: AWS::ApiGateway::ApiKey
+    DependsOn: [ApiUsagePlan]
+    Properties: 
+      Name: !Join ["", [{"Ref": "AWS::StackName"}, "-apikey"]]
+      Description: "CloudFormation API Key V1"
+      Enabled: true
+      GenerateDistinctId: false
+      Value: abcdefg123456665ffghsdghfgdhfgdh4565
+      StageKeys:
+        - RestApiId: !Ref ApiGatewayApi
+          StageName: dev
+
+  ApiUsagePlan:
+    Type: "AWS::ApiGateway::UsagePlan"
+    DependsOn:
+      - ApiGatewayApi
+    Properties:
+      ApiStages: 
+        - ApiId: !Ref ApiGatewayApi
+          Stage: dev
+      Description: !Join [" ", [{"Ref": "AWS::StackName"}, "usage plan"]]
+      Quota:
+        Limit: 1000
+        Period: MONTH
+      UsagePlanName: !Join ["", [{"Ref": "AWS::StackName"}, "-usage-plan"]]
+
+  ApiUsagePlanKey:
+    Type: "AWS::ApiGateway::UsagePlanKey"
+    DependsOn: 
+      - ApiGatewayApi
+    Properties:
+      KeyId: !Ref ApiKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref ApiUsagePlan

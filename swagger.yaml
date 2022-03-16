@@ -3,7 +3,7 @@ info:
   description: "AI Photo Search application, built during the Cloud and Big Data course\
     \ at Columbia University."
   version: "1.0.0"
-  title: "AI Photo Search"
+  title: "AI Photo Search CF"
 basePath: "/dev"
 schemes:
 - "https"
