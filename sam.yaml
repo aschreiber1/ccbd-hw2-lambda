@@ -82,6 +82,11 @@ Resources:
               - logs:DescribeLogStreams
               - logs:PutLogEvents
             Resource: '*'
+          -
+            Effect: Allow
+            Action:
+              - lambda:*
+            Resource: '*'
 
   # API Gateway
   ApiGatewayApi:
