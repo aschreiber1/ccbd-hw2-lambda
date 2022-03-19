@@ -66,16 +66,22 @@ paths:
       responses:
         "200":
           description: "200 response"
+          schema:
+            type: object
           headers:
             Access-Control-Allow-Origin:
               type: "string"
         "500":
           description: "500 response"
+          schema:
+            $ref: '#/definitions/Error'
           headers:
             Access-Control-Allow-Origin:
               type: "string"
         "403":
           description: "403 response"
+          schema:
+            $ref: '#/definitions/Error'
           headers:
             Access-Control-Allow-Origin:
               type: "string"
