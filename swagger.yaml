@@ -94,7 +94,6 @@ paths:
           integration.request.path.key: "method.request.path.object"
           integration.request.path.bucket: "method.request.path.folder"
         passthroughBehavior: "when_no_match"
-        contentHandling: "CONVERT_TO_TEXT"
         type: "aws"
 securityDefinitions:
   api_key:
