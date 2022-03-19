@@ -46,6 +46,22 @@ Resources:
       AccessControl: PublicRead
       BucketName: "ccbd-hw2-photos-cf"
     # roles
+  PhotoSrcBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref PhotoSrcBucket
+      PolicyDocument:
+        Statement:
+          -
+            Action:
+              - s3:GetObject
+            Effect: Allow
+            Resource:
+              - !Sub arn:aws:s3:::${PhotoSrcBucket}
+              - !Sub arn:aws:s3:::${PhotoSrcBucket}/*
+            Principal:
+              AWS:
+                - '*'
   s3AWSIntegrationExecutionRole:
     Type: AWS::IAM::Role
     Properties:
