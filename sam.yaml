@@ -160,4 +160,5 @@ Resources:
       UsagePlanId: !Ref ApiUsagePlan
   
   AWS::OpenSearchService::Domain:
-    DomainName: "photos-cf"
+    Properties:
+      DomainName: "photos-cf"
