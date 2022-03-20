@@ -159,7 +159,16 @@ Resources:
       KeyType: API_KEY
       UsagePlanId: !Ref ApiUsagePlan
   
-  OpenSearch:
+  MyOpenSearchDomain:
     Type: AWS::OpenSearchService::Domain
     Properties:
-      DomainName: "photos-cf"
+      DomainName: photos-cf
+      ClusterConfig:
+        InstanceCount: 1
+        InstanceType: t3.small.search
+        DedicatedMasterEnabled: false
+      EBSOptions:
+        EBSEnabled: true
+        VolumeSize: 10
+        VolumeType: gp2
+      EngineVersion: "OpenSearch_1.1"
