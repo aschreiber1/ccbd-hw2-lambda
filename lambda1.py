@@ -33,7 +33,8 @@ def store_object(bucket, name, labels):
     credentials = boto3.Session().get_credentials()
     awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, "us-east-1", service, session_token=credentials.token)
 
-    host = 'search-photos-tkylqog3r54ymwr2fkodktfp74.us-east-1.es.amazonaws.com' 
+    #host = 'search-photos-tkylqog3r54ymwr2fkodktfp74.us-east-1.es.amazonaws.com' 
+    host = 'search-myopensearchdom-jbgzixfdropm-s4ro6vprjsl33ultx3x7p575mm.us-east-1.es.amazonaws.com'
     search = OpenSearch(
         hosts = [{'host': host, 'port': 443}],
         http_auth = awsauth,
