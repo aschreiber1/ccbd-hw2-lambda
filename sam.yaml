@@ -158,3 +158,6 @@ Resources:
       KeyId: !Ref ApiKey
       KeyType: API_KEY
       UsagePlanId: !Ref ApiUsagePlan
+  
+  AWS::OpenSearchService::Domain:
+    DomainName: "photos-cf"
