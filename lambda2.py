@@ -54,7 +54,7 @@ def query(parsed_query):
     query_def = {
       "query": {
         "simple_query_string": {
-          "query": '|'.join(parsed_query),
+          "query": '+'.join(parsed_query),
           "fields": ["labels"]
         }
       }
