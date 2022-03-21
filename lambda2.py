@@ -27,6 +27,12 @@ def getMessageFromLex(q):
     if description2:
         out.append(description2['value']['resolvedValues'][0])
 
+    #hack to make queries like "CATS" return pictures labeled as CAT
+    for i in range(len(out)):
+        word = out[i]
+        if word[-1] == "s" or word[-1] == "S":
+            out[i] = word[:len(word)-1]
+
     return out
 
 def query(parsed_query):
