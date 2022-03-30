@@ -6,6 +6,7 @@ import time
 
 def getMessageFromLex(q):
     client = boto3.client('lexv2-runtime')
+    
 
     # Submit the text 'I would like to see a dentist'
     response = client.recognize_text(
